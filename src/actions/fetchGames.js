@@ -17,8 +17,11 @@ export const fetchGames = (searchInput) => {
             },
             success: function(res) {
                 res.results.map(game => {
-                    return dispatch({ type: 'ADD_GAME', payload: {[game.guid]: game} });
-                })
+                    return dispatch({
+                        type: 'ADD_GAME',
+                        payload: { [game.guid]: game }
+                    });
+                });
             }
         });
     }
