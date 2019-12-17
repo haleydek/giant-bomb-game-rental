@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import SearchForm from './search/form';
 
 function App() {
   return (
     <div className="App">
-      This is my app.
+      <SearchForm/>
     </div>
   );
 }

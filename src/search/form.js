@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { fetchGames } from '../actions/fetchGames';
+import { connect } from 'react-redux';
 
 class SearchForm extends React.Component {
     state = {
@@ -13,9 +15,19 @@ class SearchForm extends React.Component {
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+
+        this.props.fetchGames(this.state.searchInput);
+
+        this.setState({
+            searchInput: ''
+        })
+    }
+
     render() {
         return (
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
                 <Form.Label>Search Games</Form.Label>
                 <Form.Control
                     as='input'
@@ -24,10 +36,10 @@ class SearchForm extends React.Component {
                     onChange={this.handleChange}
                 />
 
-                <Button type='submit' value='Search' />
+                <Button type='submit'>Search</Button>
             </Form>
         )
     }
 }
 
-export default SearchForm;
+export default connect(null, { fetchGames })(SearchForm);

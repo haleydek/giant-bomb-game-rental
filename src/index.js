@@ -7,6 +7,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers/rootReducer';
 import App from './App';
 
+require('dotenv').config();
+
 const store = createStore(
     rootReducer,
     composeWithDevTools(

@@ -4,6 +4,7 @@ const gamesReducer = (state = {
     switch (action.type) {
 
         case 'LOADING_GAMES':
+            console.log("loading games");
             return {
                 ...state,
                 loading: true
