@@ -1,4 +1,6 @@
 const gamesReducer = (state = {
+    byGuid: {},
+    allGuids: [],
     loading: false
 }, action) => {
     switch (action.type) {
@@ -10,11 +12,20 @@ const gamesReducer = (state = {
                 loading: true
             }
         
-        case 'ADD_GAMES':
+        case 'ADD_GAME':
+        // add search results to state (Object for for each game)
+        // use each game's unique guid as its key
+
             return {
                 ...state,
-                // add search results to state. Object for for each game.
-                // use each game's unique id as its key
+                byGuid: {
+                    ...state.byGuid,
+                    ...action.payload
+                },
+                allGuids: [
+                    ...state.allGuids,
+                    Object.keys(action.payload)[0]
+                ],
                 loading: false
             }
 

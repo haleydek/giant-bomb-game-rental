@@ -16,8 +16,9 @@ export const fetchGames = (searchInput) => {
                 format: 'jsonp',
             },
             success: function(res) {
-                dispatch({ type: 'ADD_GAMES', payload: res.results })
-                console.log(res);
+                res.results.map(game => {
+                    return dispatch({ type: 'ADD_GAME', payload: {[game.guid]: game} });
+                })
             }
         });
     }
