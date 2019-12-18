@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
+import Container from 'react-bootstrap/Container';
 import SearchForm from './search/form';
 
 function App() {
   return (
-    <div className="App">
-      <SearchForm/>
-    </div>
+      <Container className="App">
+        <SearchForm/>
+      </Container>
   );
 }
 
