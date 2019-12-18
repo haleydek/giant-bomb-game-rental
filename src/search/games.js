@@ -1,18 +1,32 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import Container from 'react-bootstrap/Container';
+import GameCard from './gameCard';
 
 class Games extends React.Component {
     render() {
+        const { games } = this.props;
+
+        const cards = [];
+
+        for (let key in games) {
+            cards.push(
+                <GameCard 
+                    key={key}
+                    title={games[key].name}
+                    description={games[key].deck}
+                    image={games[key].image.small_url}
+                    detailsLink={games[key].api_detail_url}
+                />
+            )
+        }
+
         return (
-            
+            <Container>
+                {cards}
+            </Container>
         )
     }
+    
 }
 
-const mapStateToProps = (state) => {
-    return {
-        games: state.games
-    }
-}
-
-export default connect(mapStateToProps)(Games);
+export default Games;

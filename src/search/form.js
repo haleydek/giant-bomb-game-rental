@@ -1,8 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { fetchGames } from '../actions/fetchGames';
-import { connect } from 'react-redux';
 
 class SearchForm extends React.Component {
     state = {
@@ -42,4 +40,4 @@ class SearchForm extends React.Component {
     }
 }
 
-export default connect(null, { fetchGames })(SearchForm);
+export default SearchForm;

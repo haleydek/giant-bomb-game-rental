@@ -16,6 +16,7 @@ export const fetchGames = (searchInput) => {
                 format: 'jsonp',
             },
             success: function(res) {
+                //return dispatch({ type: 'ADD_GAME', payload: res.results })
                 res.results.map(game => {
                     return dispatch({
                         type: 'ADD_GAME',
