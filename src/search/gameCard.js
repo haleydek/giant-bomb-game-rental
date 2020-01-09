@@ -3,11 +3,11 @@ import Card from 'react-bootstrap/Card';
 
 const GameCard = (props) => {
     return (
-        <Card>
+        <Card style={{ width: '18rem' }}>
             <Card.Img
                 variant="top"
                 src={props.image}
-                thumbnail
+                fluid
             />
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>

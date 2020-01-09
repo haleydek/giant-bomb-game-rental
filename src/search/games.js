@@ -1,5 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+//import Row from 'react-bootstrap/Row';
+//import CardGroup from 'react-bootstrap/CardGroup';
 import GameCard from './gameCard';
 
 class Games extends React.Component {
